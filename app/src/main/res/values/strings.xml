@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">RadioU</string>
+    <string name="radiou">RadioU</string>
+    <string name="house">house</string>
+    <string name="techno">techno</string>
+    <string name="festival">festival</string>
+    <string name="edm">edm</string>
+    <string name="neunziger">neunziger</string>
+    <string name="achtziger">achtziger</string>
+    <string name="hardstyle">hardstyle</string>
+    <string name="chill">chill\n</string>
+    <string name="afrohouse">afrohouse</string>
+    <string name="zurueck">zurueck</string>
+    <string name="image">Image</string>
+    <string name="title">Title</string>
+    <string name="artist">Artist</string>
+    <string name="album">Album</string>
+    <string name="moderator">Moderator</string>
+    <string name="bewertung_absenden">Bewertung absenden</string>
+    <string name="like">like</string>
+    <string name="dislike">dislike</string>
+    <string name="lasst_mir_gerne_eine_bewertung_da">Lasst mir gerne eine Bewertung da</string>
+    <string name="wunsch_song_eingeben">Wunsch-Song eingeben...</string>
+    <string name="songwish">songwish</string>
+
+</resources>
