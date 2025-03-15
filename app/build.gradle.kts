@@ -39,7 +39,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation("com.microsoft.sqlserver:mssql-jdbc:9.4.1.jre8")
+    implementation(libs.mssql.jdbc)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)

@@ -11,7 +11,7 @@ class Database {
 
     companion object {
 
-        private const val URL = "jdbc:sqlserver://sqlserver-tb.windows.net:1433;databaseName=Testdatenbank"
+        private const val URL = "jdbc:sqlserver://sqlserver-tb.windows.net:1433;databaseName=Testdatenbank;encrypt=true;trustServerCertificate=true"
         private const val USER = "TomBerkes"
         private const val PASSWORD = "cyjcit-cenjes-9jIkfe"
         // Methode zum Einfügen eines Songwunsches in die Datenbank
@@ -26,13 +26,20 @@ class Database {
                         connection.prepareStatement(query).use { statement ->
                             statement.setString(1, songWish)  // Songwunsch in die Spalte Wunsch
                             statement.setTimestamp(2, java.sql.Timestamp(System.currentTimeMillis()))  // Aktuelles Datum in die Spalte Datum
-                            statement.executeUpdate()  // Abfrage ausführen
+                            val rowsAffected = statement.executeUpdate()  // Abfrage ausführen
+
+                            // Überprüfen, ob Zeilen betroffen sind
+                            if (rowsAffected > 0) {
+                                println("Songwunsch erfolgreich eingefügt!")
+                            } else {
+                                println("Kein Songwunsch eingefügt.")
+                            }
                         }
-                    println("Erfolgreich")
                     }
                     true
                 } catch (e: SQLException) {
                     e.printStackTrace()
+                    println("Fehler beim Einfügen des Songwunsches: ${e.message}")
                     false
                 }
             }
