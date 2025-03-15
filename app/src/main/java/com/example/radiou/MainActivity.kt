@@ -1,5 +1,6 @@
 package com.example.radiou
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Method "clickOnPlaylist"
+    @SuppressLint("SuspiciousIndentation")
     fun clickOnPlaylist(clickedPlaylist: View?) {
         val playlistName = when (clickedPlaylist?.id) {
             R.id.button80er -> "80er"

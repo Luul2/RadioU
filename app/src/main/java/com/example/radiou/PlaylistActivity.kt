@@ -14,6 +14,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class PlaylistActivity : AppCompatActivity() {
 
@@ -72,8 +74,7 @@ class PlaylistActivity : AppCompatActivity() {
 
             if(enteredText.isNotEmpty()){
                 songWishesEditText.setText("                              Danke :)")
-                // Songwunsch übergabe
-                //sendWishes(enteredText)
+                sendWishes(enteredText)
             }
             else {
                 Toast.makeText(baseContext, "Bitte einen Songwunsch eingeben.", Toast.LENGTH_SHORT).show()
@@ -101,7 +102,17 @@ class PlaylistActivity : AppCompatActivity() {
 
             // Zum Speichern der Bewertung
             //val ratingValue = ratingBar.rating
-            //saveRating(ratingValue)
+            //sendRating(ratingValue)
+        }
+    }
+    private fun sendWishes(songWish: String) {
+        GlobalScope.launch {
+            val success = Database.insertSongRequest(songWish)
+            if (success) {
+                println("Songwunsch wurde erfolgreich in der Datenbank gespeichert!")
+            } else {
+                println("Fehler beim Speichern des Songwunsches in der Datenbank.")
+            }
         }
     }
 
