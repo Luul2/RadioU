@@ -39,7 +39,6 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.mssql.jdbc)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
@@ -48,4 +47,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.mssql.jdbc)
+
 }

@@ -117,11 +117,12 @@
         android:layout_height="43dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/songwish"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/songWishesEditText"
+        app:layout_constraintTop_toTopOf="@id/songWishesEditText"
+        app:layout_constraintBottom_toBottomOf="@id/songWishesEditText"
         app:layout_constraintVertical_bias="0.622"
         app:srcCompat="@android:drawable/ic_menu_send" />
 

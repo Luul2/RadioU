@@ -14,7 +14,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlinx.coroutines.GlobalScope
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
 class PlaylistActivity : AppCompatActivity() {
@@ -56,13 +56,17 @@ class PlaylistActivity : AppCompatActivity() {
         val likeButton: ImageButton = findViewById(R.id.likeButton)
         val dislikeButton: ImageButton = findViewById(R.id.dislikeButton)
         likeButton.setOnClickListener {
+            sendLike()
             likeButton.visibility = View.GONE
-            likeButton.postDelayed({likeButton.visibility = View.VISIBLE},300)}
+            likeButton.postDelayed({
+                likeButton.visibility = View.VISIBLE},300)}
 
         // Dislike Button
         dislikeButton.setOnClickListener{
+            sendDislike()
             dislikeButton.visibility = View.GONE
-            dislikeButton.postDelayed({dislikeButton.visibility = View.VISIBLE}, 300)}
+            dislikeButton.postDelayed({
+                dislikeButton.visibility = View.VISIBLE}, 300)}
 
 
         // Songwünsche
@@ -92,26 +96,62 @@ class PlaylistActivity : AppCompatActivity() {
             when {
                 fl in 0f..1f -> ratingTextView.text = "Sehr schlecht"
                 fl in 1f..2f -> ratingTextView.text = "Schlecht"
-                fl in 2f..3f -> ratingTextView.text = "Geht schon"
+                fl in 2f..3f -> ratingTextView.text = getString(R.string.geht_schon)
                 fl in 3f..4f -> ratingTextView.text = "Gut"
                 fl in 4f..5f -> ratingTextView.text = "Sehr gut"
             }
         }
         sendRatingButton.setOnClickListener {
             sendRatingButton.text = "Danke für deine Bewertung"
-
-            // Zum Speichern der Bewertung
-            //val ratingValue = ratingBar.rating
-            //sendRating(ratingValue)
+            val ratingValue = ratingBar.rating
+            sendRating(ratingValue)
         }
     }
+
+    // Übergabe Like
+    private fun sendLike() {
+        lifecycleScope.launch {
+            val success = Database.insertLike()
+            if (success) {
+                println("Like wurde erfolgreich in der Datenbank gespeichert!")
+            } else {
+                println("Fehler beim Speichern des Likes.")
+            }
+        }
+    }
+
+    // Übergabe Dislike
+    private fun sendDislike() {
+        lifecycleScope.launch {
+            val success = Database.insertDislike()
+            if (success) {
+                println("Dislike wurde erfolgreich in der Datenbank gespeichert!")
+            } else {
+                println("Fehler beim Speichern des Dislikes.")
+            }
+        }
+    }
+
+    // Übergabe Songwunsch
     private fun sendWishes(songWish: String) {
-        GlobalScope.launch {
+        lifecycleScope.launch {
             val success = Database.insertSongRequest(songWish)
             if (success) {
                 println("Songwunsch wurde erfolgreich in der Datenbank gespeichert!")
             } else {
-                println("Fehler beim Speichern des Songwunsches in der Datenbank.")
+                println("Fehler beim Speichern des Songwunsches.")
+            }
+        }
+    }
+
+    // Übergabe Sternebewertung
+    private fun sendRating(ratingValue: Float) {
+        lifecycleScope.launch {
+            val success = Database.insertRating(ratingValue)
+            if (success) {
+                println("Bewertung wurden erfolgreich in der Datenbank gespeichert!")
+            } else {
+                println("Fehler beim Speichern der Bewertung.")
             }
         }
     }
