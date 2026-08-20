@@ -9,14 +9,13 @@ Zur Planung und Visualisierung der Anwendung wurde zunächst eine entsprechende 
 
 ![androidapp](bilder/1.png)
 
-## Ergebnis
-Die App bietet eine übersichtliche Startseite mit neun verschiedenen Musikrichtungen, die als 3x3-Icon-Raster dargestellt werden:
+## 📑 Inhaltsverzeichnis
 
-![androidapp](bilder/2.png)
-
-Durch Antippen einer Playlist gelangt der Nutzer in die Detailansicht. Dort werden die Songinformationen wie Titel, Interpret, Album und der zugehörige Moderator angezeigt. Der Nutzer kann die Playlist mit einem Like oder Dislike bewerten, wobei die Buttons nach der Interaktion kurz verschwinden und so ein visuelles Feedback geben. Zudem besteht die Möglichkeit, einen Songwunsch über ein Texteingabefeld zu übermitteln. Für die Moderatoren steht ein 5-Sterne-Rating mit halben Schritten zur Verfügung, das mit Bewertungsstufen von "Sehr schlecht" bis "Sehr gut" hinterlegt ist. 
-
-![androidapp](bilder/3.png)
+- [Technische Umsetzung](#technische-umsetzung)
+- [Ergebnis](#ergebnis)
+  - [Startseite](#startseite)
+  - [Playlist-Seite](#playlist-seite)
+- [Funktionstests](#funktionstests)
 
 ## Technische Umsetzung
 Die Entwicklung der App erfolgte mit Kotlin in Android Studio. Das UI-Layout wurde in XML erstellt und nutzt Komponenten wie TableLayout für die übersichtliche Rasterdarstellung der Playlists, ImageButton
@@ -24,6 +23,17 @@ für die interaktiven Playlist-Icons und RatingBar für die Sternebewertung der 
 
 Die Daten für die Playlists werden über einen RadioStub bereitgestellt, der als Platzhalter für eine spätere Anbindung an bestehende Systeme des Radiosenders dient. Dieser enthält für jede der neun Playlists
 die relevanten Informationen wie Titel, Interpret, Album und den zugehörigen Moderator. Beim Antippen einer Playlist wird die Detailansicht geöffnet und die entsprechenden Daten über einen Intent übergeben.
+
+## Ergebnis
+### Startseite
+Die App bietet eine übersichtliche Startseite mit neun verschiedenen Musikrichtungen, die als 3x3-Icon-Raster dargestellt werden:
+
+![androidapp](bilder/2.png)
+
+## Playlist-Seite
+Durch Antippen einer Playlist gelangt der Nutzer in die Detailansicht. Dort werden die Songinformationen wie Titel, Interpret, Album und der zugehörige Moderator angezeigt. Der Nutzer kann die Playlist mit einem Like oder Dislike bewerten, wobei die Buttons nach der Interaktion kurz verschwinden und so ein visuelles Feedback geben. Zudem besteht die Möglichkeit, einen Songwunsch über ein Texteingabefeld zu übermitteln. Für die Moderatoren steht ein 5-Sterne-Rating mit halben Schritten zur Verfügung, das mit Bewertungsstufen von "Sehr schlecht" bis "Sehr gut" hinterlegt ist. 
+
+![androidapp](bilder/3.png)
 
 ## Funktionstests
 Die App wurde während der gesamten Entwicklung regelmäßig getestet. Die folgenden Punkte wurden dabei überprüft:
@@ -38,7 +48,6 @@ Die App wurde während der gesamten Entwicklung regelmäßig getestet. Die folge
 - Vergewissern, dass auch alle Bewertungen von null bis fünf in Halbkomma-Schritten eingestellt werden können
 - Ermitteln der Korrektheit der sich ändernden Beschreibungen bei einer unterschiedlichen Anzahl an Sternen
 - Überprüfen der korrekten Anzeige der Sternebewertung und der Änderung des Buttons von „Bewertung absenden“ zu „Bewertung abgesendet“ nach erfolgreicher Abgabe
-- Sicherstellen, dass die Eingabedaten (Songwunsch und Bewertung) ordnungsgemäß in die Datenbank übertragen werden
 - Analysieren, ob die App in allen konfigurierten Sprachen richtig angezeigt wird
 
 Zusätzlich zu den manuellen Tests wurden auch Breakpoints und Logcat genutzt, um die Logmeldungen in Echtzeit auf potenzielle Fehlerquellen zu verfolgen. Außerdem fanden Espresso-Tests statt, die bei der
