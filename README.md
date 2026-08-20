@@ -15,12 +15,9 @@ Die App bietet eine übersichtliche Startseite mit neun verschiedenen Musikricht
 ![androidapp](bilder/2.png)
 
 Durch Antippen einer Playlist gelangt der Nutzer in die Detailansicht. Dort werden die Songinformationen wie Titel, Interpret, Album und der zugehörige Moderator angezeigt. 
-
 Der Nutzer kann die Playlist mit einem Like oder Dislike bewerten, wobei die Buttons nach der Interaktion kurz verschwinden und so ein visuelles Feedback geben. 
-
-Zudem besteht die Möglichkeit, einen Songwunsch über ein Texteingabefeld zu übermitteln. 
-
-Für die Moderatoren steht ein 5-Sterne-Rating mit halben Schritten zur Verfügung, das mit Bewertungsstufen von "Sehr schlecht" bis "Sehr gut" hinterlegt ist. 
+Zudem besteht die Möglichkeit, einen Songwunsch über ein Texteingabefeld zu übermitteln. Für die Moderatoren steht ein 5-Sterne-Rating mit halben Schritten zur Verfügung, 
+das mit Bewertungsstufen von "Sehr schlecht" bis "Sehr gut" hinterlegt ist. 
 
 ![androidapp](bilder/3.png)
 
