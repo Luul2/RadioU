@@ -40,5 +40,6 @@ Die App wurde während der gesamten Entwicklung regelmäßig getestet. Die folge
 - Überprüfen der korrekten Anzeige der Sternebewertung und der Änderung des Buttons von „Bewertung absenden“ zu „Bewertung abgesendet“ nach erfolgreicher Abgabe
 - Sicherstellen, dass die Eingabedaten (Songwunsch und Bewertung) ordnungsgemäß in die Datenbank übertragen werden
 - Analysieren, ob die App in allen konfigurierten Sprachen richtig angezeigt wird
+
 Zusätzlich zu den manuellen Tests wurden auch Breakpoints und Logcat genutzt, um die Logmeldungen in Echtzeit auf potenzielle Fehlerquellen zu verfolgen. Außerdem fanden Espresso-Tests statt, die bei der
 Auswertung der Richtigkeit der UI-Komponenten halfen.
