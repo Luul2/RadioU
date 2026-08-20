@@ -10,7 +10,7 @@ Zur Planung und Visualisierung der Anwendung wurde zunächst eine entsprechende 
 ![androidapp](bilder/1.png)
 
 ## Ergebnis
-Die App bietet eine übersichtliche Startseite mit neun verschiedenen Musikrichtungen wie House, Techno, 80er und EDM, die als 3x3-Icon-Raster dargestellt werden. 
+Die App bietet eine übersichtliche Startseite mit neun verschiedenen Musikrichtungen, die als 3x3-Icon-Raster dargestellt werden:
 
 ![androidapp](bilder/2.png)
 
